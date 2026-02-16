@@ -1,0 +1,56 @@
+body{
+    background-image: url('/src/images/farming.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+.logo-container{
+position: absolute;
+top:0;
+left:0;
+}
+
+.logo-container img{
+   margin-top:0;
+   left:0;
+   width:250px;
+   height:250px;
+   mix-blend-mode: screen;
+   filter: invert(50%) sepia(100%) saturate(700%) hue-rotate(80deg) brightness(100%);
+}
+.home-container{
+  text-align: center;
+  color:green;
+  margin-top: 200px;
+  font-family: Arial, sans-serif;
+}
+.home-container h1{
+  font-size: 40px;
+  margin-bottom: 0px;
+  color:orangered;
+}
+
+.label-container{
+  margin-top:50px ;
+  text-align: center;
+  color:rgb(235, 187, 114);
+  font-size:20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.label-container label{
+  display: block;
+  margin-bottom: 20px;
+}
+
+.line p{
+  text-align: center;
+  color: white;
+  font-size: 14px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.icons a{
+    font-size: 30px;
+    color: rgb(136, 219, 136);
+    margin-top: 10px;
+    margin-right: 15px;
+}
