@@ -1,17 +1,26 @@
 import { useState } from 'react'
 import './App.css'
-import Home from './Pages/home'
 import { Routes, Route } from 'react-router-dom'
+import Home from './Pages/home'
+import Postskill from './Pages/Postskill'
+import PostSupply from './Pages/PostSupply'
+import FindSuppliers from './Pages/FindSuppliers'
+
+
 
 
 function App() {
 
   return (
-    <>
+    
      <Routes>
         <Route path='/' element={<Home />} />
+        <Route path='/Postskill' element={<Postskill />} />
+        <Route path='/PostSupply' element={<PostSupply />} />
+        <Route path='/FindSuppliers' element={<FindSuppliers />} />
+        
       </Routes>
-    </>
+    
   )
 }
 

@@ -5,6 +5,10 @@ import {NavLink,useNavigate} from 'react-router-dom';
 import { FaWhatsapp } from "react-icons/fa";
 import { FaPhoneSquareAlt } from "react-icons/fa";
 import { FaSquareXTwitter } from "react-icons/fa6";
+import Postskill from './Postskill';
+import PostSupply from './PostSupply';
+import FindSuppliers from './FindSuppliers';
+
 
 const Home = () => {
 const styles={
@@ -23,7 +27,6 @@ const styles={
     
     <div className="home-container">
       <h1>Welcome to Agricircle</h1>
-      <p>Your one-stop solution for agricultural needs.</p>
     </div>
     <div className="label-container">
 
