@@ -15,9 +15,9 @@ function App() {
     
      <Routes>
         <Route path='/' element={<Home />} />
-        <Route path='/Postskill' element={<Postskill />} />
-        <Route path='/PostSupply' element={<PostSupply />} />
-        <Route path='/FindSuppliers' element={<FindSuppliers />} />
+        <Route path='/Postskill' element={<Postskill />}></Route>
+        <Route path='/PostSupply' element={<PostSupply />}></Route>
+        <Route path='/FindSuppliers' element={<FindSuppliers />}></Route>
         
       </Routes>
     

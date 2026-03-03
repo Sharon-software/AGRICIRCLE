@@ -17,6 +17,7 @@ const styles={
    fontSize:'20px',
    cursor:'pointer'
 };
+const navigate = useNavigate()
   
     
   return (
@@ -30,12 +31,38 @@ const styles={
     </div>
     <div className="label-container">
 
-      <label>Are you a passionate farmer ready to  share your skills with the world this is the platform <br/> <span style={styles}> POST YOUR SKILLS </span>  <br/></label>
+  <label>
   
-      <label>Do you have  available stock  <span style={styles}>POST SUPPLY </span>  to stores and people near you<br/></label>
-      <label>Are you a store owner looking for reliable suppliers <br/> <span style={styles}> FIND SUPPLIERS </span> <br/> to meet your inventory needs<br/></label>
+  Are you a passionate farmer ready to share your skills with the world?
+  <br />
+  This is the platform to{" "}
+  <NavLink to="/PostSkill" style={styles}>
+    POST YOUR SKILLS
+  </NavLink>
+  <br />
 
-    </div>
+</label>
+
+<label>
+  Do you have available stock to offer stores and people near you?
+  <br />
+  <NavLink to="/PostSupply" style={styles}>
+    POST YOUR SUPPLY
+  </NavLink>
+  <br />
+</label>
+
+<label>
+  Are you a store owner looking for reliable suppliers?
+  <br />
+  <NavLink to="/FindSuppliers" style={styles}>
+    FIND SUPPLIERS
+  </NavLink>
+  <br />
+  to meet your inventory needs
+  <br />
+</label>
+</div>
     
     <footer>
       <div className='line'>

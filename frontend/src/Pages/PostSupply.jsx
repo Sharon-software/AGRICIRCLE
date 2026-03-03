@@ -2,7 +2,9 @@ import React from 'react'
 
 const PostSupply = () => {
   return (
-    <div>PostSupply</div>
+    <>
+    <h1>Post Supply Page</h1>
+    </>
   )
 }
 
