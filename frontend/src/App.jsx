@@ -5,6 +5,7 @@ import Home from './Pages/home'
 import Postskill from './Pages/Postskill'
 import PostSupply from './Pages/PostSupply'
 import FindSuppliers from './Pages/FindSuppliers'
+import Register from './Pages/Register'
 
 
 
@@ -18,7 +19,8 @@ function App() {
         <Route path='/Postskill' element={<Postskill />}></Route>
         <Route path='/PostSupply' element={<PostSupply />}></Route>
         <Route path='/FindSuppliers' element={<FindSuppliers />}></Route>
-        
+        <Route path='/Register' element={<Register />}></Route>
+
       </Routes>
     
   )
