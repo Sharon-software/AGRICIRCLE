@@ -94,3 +94,43 @@ left:0;
     margin-top: -10px;
     margin-bottom: 10px;
 }
+.LoginContainer{
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    width: 400px;
+    margin: 50px auto;
+}
+.LoginContainer form{
+    display: flex;
+    flex-direction: column;
+}
+.LoginContainer input{
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+.LoginContainer button{
+    padding: 10px;
+    background-color: rgb(5, 5, 5);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.LoginContainer button:hover{
+  cursor: pointer;
+  background-color: #666060;  
+}
+.LoginContainer label{
+  
+  text-decoration: underline;
+  transition: font-size 0.2s ease; 
+}
+.LoginContainer label:hover{
+  cursor: pointer;
+  font-size: 17px;
+  
+ 
+}
