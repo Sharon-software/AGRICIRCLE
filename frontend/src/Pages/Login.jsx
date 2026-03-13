@@ -1,22 +1,25 @@
-import React,{useState} from 'react'
+import React,{useState,useContext, use} from 'react'
 import {NavLink,useNavigate} from 'react-router-dom';
-import Register from './Register';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import axios from 'axios';
+import { AuthContext } from '../AuthProvider';
+
 
 const Login = () => {
 
-  const [email, setEmail] = useState('')
-  const [password, setPassword] = useState('')
-  const [loading, setLoading] = useState(false)  
-  const [error, setError] = useState('')
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [loading, setLoading] = useState(false); 
+  const [error, setError] = useState('');
+  const {isLoggedIn, setIsLoggedIn} = useContext(AuthContext);
+  const navigate = useNavigate();
 
   const handleLogin = async (e) => {
     e.preventDefault();
     setLoading(true);
 
     const loginData = {
-      email,
+      username: email,
       password
     }
     console.log('Login data==>',loginData)
@@ -25,8 +28,10 @@ const Login = () => {
     try {
        const response = await axios.post('http://127.0.0.1:8000/api/v1/token/',loginData)
        localStorage.setItem('accessToken', response.data.access)
-      localStorage.setItem('refreshToken', response.data.refresh)
-      console.log('login successful');
+       localStorage.setItem('refreshToken', response.data.refresh)
+       console.log('login successful');
+        setIsLoggedIn(true);
+        navigate('/');
     }catch(error){
       
       console.error('incorrect login details')
@@ -41,8 +46,19 @@ const Login = () => {
     <div className='LoginContainer'>
         <h1>Login</h1>
         <form onSubmit={handleLogin}>
-            <input type="text" placeholder='Email' />
-            <input type="password" placeholder='Password' />
+            <input 
+            type="text" 
+            placeholder='Email'
+            value={email} 
+            onChange={(e)=>setEmail(e.target.value)}
+            />
+            
+            <input 
+            type="password" 
+            placeholder='Password' 
+            value={password}
+            onChange={(e)=>setPassword(e.target.value)}
+            />
 
             {error && <div className='text-danger'>{error}</div>}
             {loading? (

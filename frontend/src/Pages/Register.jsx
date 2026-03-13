@@ -1,6 +1,7 @@
 import React, {useState} from 'react'
 import axios from 'axios'
 import '@fortawesome/fontawesome-free/css/all.min.css';
+import { useNavigate } from 'react-router-dom';
 
 const Register = () => {
 
@@ -11,6 +12,7 @@ const Register = () => {
     const [errors,setErrors] = useState({})
     const [successMessage, setSuccessMessage] = useState(false)
     const [loading, setLoading] = useState(false)   
+    const navigate = useNavigate();
 
     const handleRegistration = async (e) => {
         e.preventDefault();
@@ -29,6 +31,7 @@ const Register = () => {
             console.log('Registration successful');
             setErrors({}) // Clearsprevious errors on successful registration
             setSuccessMessage(true)
+            navigate('/Login')
             //redirect to login page after successful registration
             
         }catch(error){
