@@ -1,5 +1,5 @@
 import React,{useState,useContext, use} from 'react'
-import {NavLink,useNavigate} from 'react-router-dom';
+import {NavLink,useNavigate,useLocation} from 'react-router-dom';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import axios from 'axios';
 import { AuthContext } from '../AuthProvider';
@@ -13,10 +13,13 @@ const Login = () => {
   const [error, setError] = useState('');
   const {isLoggedIn, setIsLoggedIn} = useContext(AuthContext);
   const navigate = useNavigate();
+  const location = useLocation();
+  const from = location.state?.from?.pathname || '/dashboard';
 
   const handleLogin = async (e) => {
     e.preventDefault();
     setLoading(true);
+    setError('');
 
     const loginData = {
       username: email,
@@ -31,7 +34,7 @@ const Login = () => {
        localStorage.setItem('refreshToken', response.data.refresh)
        console.log('login successful');
         setIsLoggedIn(true);
-        navigate('/');
+        navigate(from, { replace:true });
     }catch(error){
       
       console.error('incorrect login details')

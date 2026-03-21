@@ -1,9 +1,18 @@
-import React, {useEffect} from 'react'
+import {useEffect,useContext} from 'react'
 import axios from 'axios';
 import axiosInstance from '../axiosinstance';
+import {AuthContext} from '../AuthProvider'
+import { useNavigate } from 'react-router-dom';
 
 const Dashboard = () => {
-    
+    const {isLoggedIn,setIsLoggedIn}= useContext(AuthContext)
+    const navigate=useNavigate();
+    const handleLogout = () => {
+        localStorage.removeItem('accessToken');
+        localStorage.removeItem('refreshToken');
+        setIsLoggedIn(false);
+        navigate('/Login')
+    }
     useEffect(() => {
     const fetchProtectedData = async () => {
         
@@ -22,6 +31,15 @@ const Dashboard = () => {
   return (
     <>
     
+    {isLoggedIn ? (
+      
+      <button className='btn btn-danger' onClick={handleLogout}>Logout</button>
+    ):(
+      <>
+
+      </>
+    )
+    }
     
     </>
   )

@@ -37,7 +37,7 @@ async function(error){
         const refreshToken=localStorage.getItem('refreshToken')
         try{
          const response=await axiosInstance.post('/token/refresh/', {refresh: refreshToken})
-         localStorage.getItem('accessToken',response.data.access)
+         localStorage.setItem('accessToken',response.data.access)
          originalRequest.headers['Authorization']= `Bearer ${response.data.access}`
          return axiosInstance(originalRequest)
         }catch(error){
