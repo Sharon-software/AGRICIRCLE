@@ -27,6 +27,7 @@ class ProtectedView(APIView):
 
 
 class PostView(APIView):
+    
     permission_classes = [IsAuthenticated]
     def get(self, request):
         posts = Post.objects.all().order_by('-created_at')

@@ -121,7 +121,9 @@ const PostSupply = () => {
       images,
       createdAt: new Date().toISOString(),
     };
-    console.log("POST DATA:", post);
+    //send to backend 
+   const existingPosts = JSON.parse(localStorage.getItem("posts")) || [];
+   localStorage.setItem("posts", JSON.stringify([...existingPosts, post])); 
    
     // reset form
     setSelectedCities([]);
